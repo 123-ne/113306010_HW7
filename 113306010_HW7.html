@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Layout</title>
+  
+  <style>
+      * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .main-container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 20px auto;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    /* Left Panel */
+    .left-panel {
+      background-color: #333;
+      color: white;
+      flex: 1;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .personal-photo {
+      width: 100%;
+      max-height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+   
+    }
+    .edit-button{
+        margin-top:10px;
+        padding:5px 10px;
+        font-size: 14px;
+        cursor:pointer;
+    }
+
+    .nccu-logo {
+      width: 200px;
+      margin: 50px auto;
+    }
+
+    /* Text Content */
+    .text-content {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    .text-content h3 {
+      border-bottom: 1px solid #aaa;
+      padding-bottom: 5px;
+      margin-bottom: 10px;
+    }
+
+    /* Right Panel */
+    .right-panel {
+      flex: 2;
+      padding: 20px;
+    }
+
+    .education, .homework-list, .favorite-music {
+      margin-bottom: 30px;
+    }
+
+    .education h2, .homework-list h2, .favorite-music h2 {
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      font-size: 20px;
+    }
+
+    .education-item {
+      display: flex;
+      margin-bottom: 15px;
+    }
+
+    .year {
+      font-weight: bold;
+      width: 120px;
+      text-align: right;
+      margin-right: 15px;
+      color: #555;
+    }
+
+    .details {
+      line-height: 1.6;
+    }
+
+    /* Homework List */
+    .homework-list ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .homework-list ul li {
+      margin: 5px 0;
+    }
+
+    .homework-list ul li a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .homework-list ul li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Favorite Music */
+    .favorite-music ul {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .favorite-music li {
+      text-align: center;
+    }
+
+    .favorite-music img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .favorite-music p {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #333;
+    }
+
+    /* Note */
+    .note {
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <img src="https://github.com/123-ne/113306010_HW4/raw/main/NE1.jpg" alt="This is me" class="personal-photo">
+
+    <div class="name-container">
+      <h1 id="name-display">Anne Lin</h1>
+      <buttton id="edit-button" class="edit-button">Edit</buttton>
+    </div>
+
+      <div class="text-content">
+        <h3>About Me</h3>
+        <p>
+          I am a freshman in the Department of Management Information Systems at National Chengchi University. I am very interested in studying programming and computer science fundamentals. I have experience in writing Java, HTML, CSS, JavaScript, and Python.
+        </p>
+        <h3>Contact</h3>
+        <p>linannetw@gmail.com</p>
+        <img src="https://github.com/123-ne/113306010_HW4/raw/main/NCCU.jpg" alt="NCCU Logo" class="nccu-logo">
+      </div>
+    </div>
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      <!-- Education -->
+      <div class="education">
+        <h2>Education</h2>
+        <div class="education-item">
+          <div class="year">2018 – 2021</div>
+          <div class="details">
+            <strong>Middle School Graduation</strong><br>
+            Started developing an interest in computer science
+          </div>
+        </div>
+        <div class="education-item">
+          <div class="year">2021 – 2023</div>
+          <div class="details">
+            
+             <strong>Taichung Municipal Chung-Ming Senior High School</strong><br>
+            Wind Band
+          </div>
+        </div>
+        <div class="education-item">
+          <div class="year">2023 – Now</div>
+          <div class="details">
+            <strong>National Chengchi University, Department of MIS</strong><br>
+            Computer Science
+          </div>
+        </div>
+      </div>
+
+      <!-- Homework List -->
+      <div class="homework-list">
+        <h2>Homework List</h2>
+        <ul>
+          <li>HW4 - <a href="https://github.com/123-ne/113306010_HW4.git" target="_blank">View on GitHub</a></li>
+          <li>Lab1 - <a href="https://github.com/123-ne/113306010_Lab1.git" target="_blank">View on GitHub</a></li>
+          <li>Lab2 - <a href="https://github.com/123-ne/113306010_Lab2.git" target="_blank">View on GitHub</a></li>
+        </ul>
+      </div>
+
+      <!-- Favorite Music -->
+      <div class="favorite-music">
+        <div id="song-list"></div> 
+        <h2>Favorite Music</h2>
+        <button id="add-music-button">Add</button>
+        <ul>
+          <li>
+            <a href="https://youtu.be/iqGAW57EudQ" target="_blank">
+              <img src="https://github.com/123-ne/113306010_HW4/raw/main/About%20You-The%201975.jpg" alt="About You">
+              <p>About You - The 1975</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/4Lmcadu8ghM" target="_blank">
+              <img src="https://github.com/123-ne/113306010_HW5/raw/main/keshi%20.jpg" alt="Soft Spot">
+              <p>keshi - Soft Spot</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/Nh36SgVTr5s" target="_blank">
+              <img src="https://github.com/123-ne/113306010_HW4/raw/main/Needy.jpg" alt="Needy">
+              <p>Delorians - Needy</p>
+            </a>
+          </li>
+          <li>
+            <a href="https://youtu.be/Hm8EHt3m3QM" target="_blank">
+              <img src="https://github.com/123-ne/113306010_HW5/raw/main/slow.jpeg" alt="慢一點">
+              <p>梁文音 Wen Yin Liang〈慢一點〉</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Note -->
+      <p class="note">
+        Note: If you'd like further modifications or additional details, let me know!
+      </p>
+    </div>
+  </div>
+  <script>
+    const nameDisplay = document.getElementById('name-display');
+    const editButton = document.getElementById('edit-button');
+    let isEditing = false;
+
+    editButton.addEventListener('click', () => {
+      if (!isEditing) {
+        // Switch to input mode
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.value = nameDisplay.textContent;
+        input.id = 'name-input';
+        nameDisplay.textContent = '';
+        nameDisplay.appendChild(input);
+        editButton.textContent = 'Save';
+        isEditing = true;
+      } else {
+        // Save the input and return to display mode
+        const input = document.getElementById('name-input');
+        nameDisplay.textContent = input.value || 'Anne Lin'; // Default name if input is empty
+        editButton.textContent = 'Edit';
+        isEditing = false;
+      }
+
+    });
+    // Assuming you have an HTML element with id 'add-music-button'
+// Assuming you have an HTML element with id 'add-music-button'
+document.getElementById('add-music-button').addEventListener('click', add);
+
+
+    // Prompt the user for the music link, song name, and image URL
+   
+   function add() {
+    // Prompt the user for the song link, song name, and image URL
+    let songlink = window.prompt("Add music link");
+    let songname = window.prompt("Add song name");
+    let imageUrl = window.prompt("Add image URL");
+
+    // Validate the input
+    if (songlink && songname && imageUrl) {
+        // Create the HTML structure for the music item
+        let musicItem = document.createElement('li');  // Create list item (li)
+        
+        let musicLink = document.createElement('a');
+        musicLink.href = songlink;  // Use the actual song link provided by the user
+        musicLink.target = "_blank";
+
+        // Create the image element
+        let imageElement = document.createElement('img'); // Create the image element
+        imageElement.src = "https://github.com/123-ne/113306010_HW7/raw/main/images.png";  // Use the image URL provided by the user
+        imageElement.alt = songname;  // Set the alt text to the song name
+
+        // Create the paragraph element with the song name
+        let paragraph = document.createElement('p');
+        paragraph.textContent = songname;
+
+        // Append the image and paragraph to the anchor element
+        musicLink.appendChild(imageElement);
+        musicLink.appendChild(paragraph);
+
+        // Append the anchor element to the list item
+        musicItem.appendChild(musicLink);
+
+        // Find the existing music list and append the new music item
+        let musicList = document.querySelector('.favorite-music ul'); // Get the ul element
+        musicList.appendChild(musicItem);  // Append the new item to the list
+    } else {
+        alert("Please provide all fields: song link, song name, and image URL.");
+    }
+}
+
+
+  </script>
+</body>
+</html>
